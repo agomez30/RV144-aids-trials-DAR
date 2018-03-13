@@ -73,10 +73,24 @@ $H_0:$ There is no relationship between getting AIDS and having the AIDS vaccine
 
 $H_a:$ There is a realtionship between getting AIDS and having the AIDS vaccine.  
 ```{r}
-chisqtestGC(results, graph = TRUE)
+myrv144 <- chisqtestGC(results, graph = TRUE)
+myrv144
 ```
 
-  The p-value of 0.0482 means the probability of getting a result like that just obtained if the null hypothesis is true is approximately 4 percent.  This is  normally considered significant.  
+ 
+  The p-value of `r myrv144$p.value` result from the Chi Square test means the probability of getting a result like that just obtained if the null hypothesis is true is approximately 4.82 percent.  This is  normally considered significant.  
+  
+  As a second approach we will consider the fisher exact test.  We will state the null and alternate hypothesis for that test.
+  
+$H_0:$ The odds ratio between having AIDS and getting the vaccine contains the number 1.  
+
+$H_a:$ The odds ratio between having AIDS and getting the vaccine does not contain the number 1.
+
+```{r}
+myfish <- fisher.test(results)
+myfish
+```
+  The p.value from the fisher test is `r myfish$p.value` and the confidence interval is `r myfish$conf.int` 
 
 ## Conclusions
 
