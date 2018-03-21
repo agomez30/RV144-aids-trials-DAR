@@ -1,7 +1,7 @@
 ---
 title: "RV144 Aids trials"
-author: "instr"
-date: "April 13, 2016"
+author: "Andrea Schwartz"
+date: "March 20,2018"
 output: html_document
 ---
 
@@ -72,8 +72,9 @@ rowPerc(results)
 <!--Display inferential evidence as to the effectiveness of the vaccine with explanations and interpretations!-->
 We now want to run a statistical test to see if the AIDS vaccine was seemingly effective.  We state the null and alternative hypothesis for this test.  
 
-$H_0:$ There is no relationship between getting AIDS and having the AIDS vaccine.  
+=======
 
+$H_0:$ There is no relationship between getting AIDS and having the AIDS vaccine.  
 $H_a:$ There is a realtionship between getting AIDS and having the AIDS vaccine.  
 ```{r}
 myrv144 <- chisqtestGC(results, graph = TRUE)
@@ -93,8 +94,13 @@ $H_a:$ The odds ratio between having AIDS and getting the vaccine does not conta
 myfish <- fisher.test(results)
 myfish
 ```
+
   The p.value from the fisher test is `r myfish$p.value` and the confidence interval is `r myfish$conf.int`. There is evidence that the interval is not 1 but it is very close.  
+   
+
 
 ## Conclusions
+
+   With the data collected and the test results all being similar, we can conlclude that the null hypothesis is proved wrong.  There were less people who got the AIDS virus who recieved the AIDS vaccine than the people who only recieved the placebo.  We can conclude that the AIDS vaccine has made a significant impact on prevention of recieving the AIDS virus in people.
 
 <Summarise your results as to the effectiveness of the vaccine with explanations that could be understood by your mom>
