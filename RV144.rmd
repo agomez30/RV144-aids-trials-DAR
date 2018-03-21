@@ -94,4 +94,6 @@ myfish
 
 ## Conclusions
 
+   With the data collected and the test results all being similar, we can conlclude that the null hypothesis is proved wrong.  There were less people who got the AIDS virus who recieved the AIDS vaccine than the people who only recieved the placebo.  We can conclude that the AIDS vaccine has made a significant impact on prevention of recieving the AIDS virus in people.
+
 <Summarise your results as to the effectiveness of the vaccine with explanations that could be understood by your mom>
