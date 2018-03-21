@@ -67,12 +67,33 @@ rowPerc(results)
 ## Inferential results
 
 <!--Display inferential evidence as to the effectiveness of the vaccine with explanations and interpretations!-->
+We now want to run a statistical test to see if the AIDS vaccine was seemingly effective.  We state the null and alternative hypothesis for this test.  
 
+$H_0:$ There is no relationship between getting AIDS and having the AIDS vaccine.  
+
+$H_a:$ There is a realtionship between getting AIDS and having the AIDS vaccine.  
 ```{r}
-chisqtestGC(results, graph = TRUE)
+myrv144 <- chisqtestGC(results, graph = TRUE)
+myrv144
 ```
 
+ 
+  The p-value of `r myrv144$p.value` result from the Chi Square test means the probability of getting a result like that just obtained if the null hypothesis is true is approximately 4.82 percent.  This is  normally considered significant.  
+  
+  As a second approach we will consider the fisher exact test.  We will state the null and alternate hypothesis for that test.
+  
+$H_0:$ The odds ratio between having AIDS and getting the vaccine contains the number 1.  
+
+$H_a:$ The odds ratio between having AIDS and getting the vaccine does not contain the number 1.
+
+```{r}
+myfish <- fisher.test(results)
+myfish
+```
+  The p.value from the fisher test is `r myfish$p.value` and the confidence interval is `r myfish$conf.int` 
 
 ## Conclusions
+
+   With the data collected and the test results all being similar, we can conlclude that the null hypothesis is proved wrong.  There were less people who got the AIDS virus who recieved the AIDS vaccine than the people who only recieved the placebo.  We can conclude that the AIDS vaccine has made a significant impact on prevention of recieving the AIDS virus in people.
 
 <Summarise your results as to the effectiveness of the vaccine with explanations that could be understood by your mom>
